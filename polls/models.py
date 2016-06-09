@@ -15,7 +15,7 @@ class Question(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-
+@python_2_unicode_compatible #this is to add python 2
 class Choice(models.Model):
     # ...
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
